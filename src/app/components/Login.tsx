@@ -1,16 +1,10 @@
 "use client";
 
-import type { Metadata } from "next";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/firebase/connection";
-
-export const metadata: Metadata = {
-    title: "CDT Tech - Login",
-    description: "Capacitação Digital para a Terceira Idade - Login",
-};
 
 export default function LoginPage() {
     const router = useRouter();
@@ -64,7 +58,9 @@ export default function LoginPage() {
                     <label htmlFor="password">Password</label>
                     <input type="password" id="password" name="password" />
                 </div>
-                <button type="submit">Login</button>
+                <div>
+                    <button type="submit">Login</button>
+                </div>
             </form>
         </div>
     );
