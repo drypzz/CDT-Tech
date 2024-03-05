@@ -1,6 +1,6 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
-import Link from 'next/link'
+import Link from "next/link"
  
 export const metadata: Metadata = {
     title: "CDT Tech - Not Found",

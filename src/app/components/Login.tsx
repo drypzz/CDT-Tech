@@ -26,11 +26,11 @@ export default function LoginPage() {
 
         const form = event.currentTarget;
 
-        const email = form.elements.namedItem('email') as HTMLInputElement;
-        const password = form.elements.namedItem('password') as HTMLInputElement;
+        const email = form.elements.namedItem("email") as HTMLInputElement;
+        const password = form.elements.namedItem("password") as HTMLInputElement;
 
         if (!email.value || !password.value) {
-            console.log('Email and password are required');
+            console.log("Email and password are required");
             return;
         };
 

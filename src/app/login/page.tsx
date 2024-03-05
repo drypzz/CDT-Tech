@@ -1,8 +1,8 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 import { Suspense } from "react";
 
 import LoginPage from "../components/Login";
-import Loading from '../loading';
+import Loading from "../loading";
 
 export const metadata: Metadata = {
     title: "CDT Tech - Login",
