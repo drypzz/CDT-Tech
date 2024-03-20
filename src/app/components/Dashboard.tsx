@@ -1,21 +1,22 @@
 "use client";
 
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { auth } from "@/firebase/connection";
+import { isLogged } from "@/utils/user";
 
 export default function DashboardPage() {
     const router = useRouter();
+    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
-    useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged((user) => {
-            if (!user) {
-                router.push("/login");
-            }
-        });
-
-        return unsubscribe;
+    const checkAuth = useCallback(async () => {
+        const logged = await isLogged();
+        if (!logged) {
+            router.push("/login");
+        } else {
+            setIsLoggedIn(true);
+        }
     }, [router]);
 
     const handleLogout = async () => {
@@ -23,12 +24,18 @@ export default function DashboardPage() {
         router.push("/login");
     };
 
+    useEffect(() => {
+        checkAuth();
+    }, [checkAuth]);
+
     return (
         <>
-            <div>
-                <h1>Dashboard</h1>
-                <button onClick={handleLogout}>Logout</button>
-            </div>
+            {isLoggedIn && (
+                <div>
+                    <h1>Dashboard</h1>
+                    <button onClick={handleLogout}>Logout</button>
+                </div>
+            )}
         </>
     );
 };

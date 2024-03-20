@@ -1,5 +1,8 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
+import { Suspense } from "react";
+
 import HomePage from "./components/Home";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "CDT Tech",
@@ -7,5 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <HomePage />;
+  return (
+    <Suspense fallback={<Loading />}>
+      <HomePage />
+    </Suspense>  
+  );
 }

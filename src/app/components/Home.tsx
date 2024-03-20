@@ -3,7 +3,7 @@
 export default function HomePage(){
     return (
         <div>
-            <h1>CDT Texh</h1>
+            <h1>CDT Tech</h1>
             <p>Capacitação Digital para a Terceira Idade</p>
         </div>
     );

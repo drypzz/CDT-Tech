@@ -1,6 +1,8 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 import { Suspense } from "react";
+
 import LoginPage from "../components/Login";
+import Loading from "../loading";
 
 export const metadata: Metadata = {
     title: "CDT Tech - Login",
@@ -9,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Login() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loading />}>
             <LoginPage />
         </Suspense>
     );
