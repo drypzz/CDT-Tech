@@ -1,12 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { auth } from "@/firebase/connection";
 import { isLogged } from "@/utils/user";
 
-export default function DashboardPage() {
+export const useDashboardRules = () => {
     const router = useRouter();
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
@@ -28,14 +28,8 @@ export default function DashboardPage() {
         checkAuth();
     }, [checkAuth]);
 
-    return (
-        <>
-            {isLoggedIn && (
-                <div>
-                    <h1>Dashboard</h1>
-                    <button onClick={handleLogout}>Logout</button>
-                </div>
-            )}
-        </>
-    );
+    return {
+        isLoggedIn,
+        handleLogout
+    }
 };

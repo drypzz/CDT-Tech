@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
 
-import LoginPage from "../components/Login";
+import LoginPage from "../components/Login/Login";
 import Loading from "../loading";
 
 export const metadata: Metadata = {
