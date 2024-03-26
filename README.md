@@ -1,2 +1,2 @@
-# CDT-Tech
-Uma aplicação web intuitiva com o objetivo do idoso se introduzir a novas tecnologias e se adequar aos meios de comunicação atual. Nosso site será dividido em categorias para facilitar a sua usabilidade. Também terá diversas funções para melhorar a acessibilidade. Será constituído em basicamente diversos tutoriais editados e didáticos. 
+# EcoHealth App
+Iremos criar um aplicativo com o objetivo de os usuários denunciarem locais com uma grande quantidade de resíduos mal descartados, gerando uma grande chance da proliferação de mosquitos da Dengue. A principal finalidade do aplicativo é diminuir os casos de Dengue na cidade de Joinville, com o nosso aplicativo será possível tirar informações fundamentais para amenizar os casos.
